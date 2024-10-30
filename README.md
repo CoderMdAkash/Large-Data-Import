@@ -21,38 +21,60 @@ Follow the steps below to set up and run this project locally.
 
 Clone this repository to your local machine:
 
-`bashCopy codegit clone https://github.com/CoderMdAkash/Large-Data-Import.git`
+```
+git clone https://github.com/CoderMdAkash/Large-Data-Import.git
+
+```
 
 ### Step 2: Install Dependencies
 
 Install all required dependencies with Composer:
 
-`bashCopy codecomposer install   `
+```
+composer install
+
+```
 
 ### Step 3: Configure Environment
 
 Create a copy of the .env file and update the database configuration:
 
-`bashCopy codecp .env.example .env   `
+```
+cp .env.example .env
+
+```
 
 In the .env file, set up your database connection details:
-`plaintextCopy codeDB_CONNECTION=mysql  DB_HOST=127.0.0.1  DB_PORT=3306  DB_DATABASE=your_database_name  DB_USERNAME=your_database_user  DB_PASSWORD=your_database_password   `
+
+```
+DB_CONNECTION=mysql  DB_HOST=127.0.0.1  DB_PORT=3306  DB_DATABASE=your_database_name  DB_USERNAME=your_database_user  DB_PASSWORD=your_database_password
+
+```
 
 Generate an application key:
 
-`bashCopy codephp artisan key:generate   `
+```
+php artisan key:generate
+
+```
 
 ### Step 4: Run Migrations
 
 Create the necessary database tables by running the migrations:
 
-`bashCopy codephp artisan migrate`
+```
+php artisan migrate
+
+```
 
 ### Step 5: Seed the Database
 
 Run the seeder to generate 50,000 posts, each with a random number of comments:
 
-`bashCopy codephp artisan db:seed --class=PostsWithCommentsSeeder`
+```
+php artisan db:seed --class=PostsWithCommentsSeeder
+
+```
 
 **Error:** Find Your Log file laravel.log in storage->logs folder
 
